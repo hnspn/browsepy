@@ -5,7 +5,8 @@ import re
 import sys
 import argparse
 import warnings
-import collections
+import 
+ections
 
 from flask import current_app
 from werkzeug.utils import cached_property
@@ -27,7 +28,7 @@ def defaultsnamedtuple(name, fields, defaults=None):
     '''
     nt = collections.namedtuple(name, fields)
     nt.__new__.__defaults__ = (None,) * len(nt._fields)
-    if isinstance(defaults, collections.Mapping):
+    if isinstance(defaults, collections.abc.Mapping):
         nt.__new__.__defaults__ = tuple(nt(**defaults))
     elif defaults:
         nt.__new__.__defaults__ = tuple(nt(*defaults))
