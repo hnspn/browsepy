@@ -5,8 +5,7 @@ import re
 import sys
 import argparse
 import warnings
-import 
-ections
+import collections
 
 from flask import current_app
 from werkzeug.utils import cached_property
